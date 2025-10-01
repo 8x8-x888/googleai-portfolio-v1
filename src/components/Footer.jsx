@@ -36,3 +36,6 @@ const Footer = () => {
     </footer>
   );
 };
+
+// ✅ Add default export here
+export default Footer;
