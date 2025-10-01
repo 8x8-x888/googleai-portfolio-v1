@@ -25,7 +25,10 @@ const About = () => {
 };
 
 export default About;```
-*You can now apply this same pattern to your `Services`, `Portfolio`, and `Contact` sections for a consistent effect.*
+/*
+  You can now apply this same pattern to your Services, Portfolio, and Contact sections
+  for a consistent effect.
+*/
 
 #### **Enhancement 2: Add Smooth Transitions to the Gallery Images**
 
