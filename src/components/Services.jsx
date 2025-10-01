@@ -1,7 +1,7 @@
-// src/components/Services.jsx
 import React from 'react';
 import { SERVICE_CARDS } from '../assets/data';
 
+// Single service card component
 const ServiceCard = ({ service }) => {
   const Icon = service.icon;
   return (
@@ -23,21 +23,18 @@ const ServiceCard = ({ service }) => {
 
 const Services = () => {
   return (
-    <section id="services" className="py-16 md:py-24" role="region" aria-label="My Automation Services">
+    <div className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         <div className="section-header">
           <h2>SERVICES</h2>
         </div>
-
         <div className="grid md:grid-cols-3 gap-8">
           {SERVICE_CARDS.map((service, index) => (
             <ServiceCard key={index} service={service} />
           ))}
         </div>
-
       </div>
-    </section>
+    </div>
   );
 };
 
