@@ -10,7 +10,7 @@ const Hero = () => {
     <section id="hero" className="pt-24 pb-16 md:pt-32 md:pb-24" role="region" aria-label="Hero Section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* --- Glowing Frame Container --- */}
+        {/* --- Glowing Frame Container (Matches Image) --- */}
         <div className="p-1 bg-gradient-to-br from-accent-cyan/80 via-primary-blue/50 to-dark-bg rounded-2xl">
           <div className="bg-dark-bg p-8 md:p-12 rounded-xl">
             
@@ -19,24 +19,27 @@ const Hero = () => {
               
               {/* --- Left Column: Text Content --- */}
               <div className="space-y-8">
-                <span className="inline-block bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan px-4 py-1 rounded-full text-sm font-semibold">
+                {/* Style from Image */}
+                <span className="inline-block bg-cyan-900/70 text-cyan-300 px-4 py-1 rounded-md text-sm font-semibold">
                   Automation &bull; CRM &bull; Integrations
                 </span>
 
-                <h1 className="text-5xl md:text-6xl font-extrabold tracking-wider uppercase">
+                {/* YOUR Headline Information with Image's Font Style */}
+                <h1 className="text-5xl md:text-6xl font-extrabold tracking-wider uppercase text-white">
                   BUILD &bull; AUTOMATE <br /> <span className="gradient-text">SCALE</span>
                 </h1>
 
+                {/* YOUR Paragraph Information */}
                 <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
                   Turn manual tasks into scalable systems. I help businesses grow smarter with automation,
                   CRM integrations, and optimized workflows.
                 </p>
 
-                {/* --- Buttons with Original Info & New Styles --- */}
+                {/* YOUR Button Information with Image's Styling */}
                 <div className="flex flex-wrap gap-4 pt-4">
                   <CalendlyTrigger
                     url={calendlyUrl}
-                    className="flex items-center gap-2 bg-gray-800/50 border-2 border-gray-500 text-gray-200 px-6 py-2 rounded-md font-semibold hover:bg-white hover:text-dark-bg hover:border-white transition-all duration-300 btn-pulse"
+                    className="flex items-center gap-2 bg-gray-800/60 border-2 border-gray-600 text-gray-200 px-6 py-2 rounded-md font-semibold hover:bg-white hover:text-dark-bg hover:border-white transition-all duration-300"
                   >
                     <PhoneCallIcon className="w-5 h-5" />
                     Book a Call Now
@@ -49,7 +52,7 @@ const Hero = () => {
                   </a>
                 </div>
 
-                {/* --- Tech Tags with New Styles --- */}
+                {/* YOUR Tags with Image's Styling */}
                 <div className="flex flex-wrap gap-3 pt-6">
                   {HERO_TAGS.map((tag) => (
                     <a
