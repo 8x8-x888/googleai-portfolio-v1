@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import { useIntersectionObserver } from './hooks/useIntersectionObserver';
+import Header from './components/Header.jsx';
+import Hero from './components/Hero.jsx';
+import About from './components/About.jsx';
+import Services from './components/Services.jsx';
+import Portfolio from './components/Portfolio.jsx';
+import Contact from './components/Contact.jsx';
+import Footer from './components/Footer.jsx';
+import { useIntersectionObserver } from './hooks/useIntersectionObserver.jsx';
 
 const AnimatedSection = ({ id, children }) => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
