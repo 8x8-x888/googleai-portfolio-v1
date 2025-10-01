@@ -1,85 +1,161 @@
-import React from 'react';
-import { HERO_TAGS } from '../assets/data';
-import { PhoneCallIcon } from '../assets/Icons';
-import CalendlyTrigger from './CalendlyTrigger';
+// src/components/Hero.jsx
+import React from "react";
+import { HERO_TAGS } from "../assets/data";
+import { PhoneCallIcon } from "../assets/Icons";
+import CalendlyTrigger from "./CalendlyTrigger";
 
 const Hero = () => {
   const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
 
   return (
-    <section id="hero" className="pt-24 pb-16 md:pt-32 md:pb-24" role="region" aria-label="Hero Section">
+    <section
+      id="hero"
+      className="pt-20 pb-16 md:pt-28 md:pb-28"
+      role="region"
+      aria-label="Hero Section"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* --- Glowing Frame Container (Matches Image) --- */}
-        <div className="p-1 bg-gradient-to-br from-accent-cyan/80 via-primary-blue/50 to-dark-bg rounded-2xl">
-          <div className="bg-dark-bg p-8 md:p-12 rounded-xl">
-            
-            {/* --- Main Content Grid --- */}
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              
-              {/* --- Left Column: Text Content --- */}
-              <div className="space-y-8">
-                {/* Style from Image */}
-                <span className="inline-block bg-cyan-900/70 text-cyan-300 px-4 py-1 rounded-md text-sm font-semibold">
-                  Automation &bull; CRM &bull; Integrations
-                </span>
+        {/* Outer thin glowing frame */}
+        <div
+          className="relative rounded-2xl p-[1px] overflow-visible"
+          style={{
+            // thin neon outline similar to your reference
+            background:
+              "linear-gradient(135deg, rgba(6,182,212,0.9) 0%, rgba(16,163,183,0.7) 35%, rgba(9,55,78,0.12) 100%)"
+          }}
+        >
+          {/* Main dark panel */}
+          <div className="relative bg-[#071018] rounded-2xl overflow-hidden shadow-2xl">
+            {/* Background portrait positioned to the right (fills right half) */}
+            <div className="absolute inset-0">
+              <img
+                src="/assets/hero-updated.png"
+                alt="Mark Angel Fernandez portrait"
+                className="absolute right-0 top-0 h-full w-1/2 min-w-[420px] object-cover object-top"
+                width="1200"
+                height="1200"
+                loading="eager"
+                style={{
+                  // subtle inner border to mimic framed look
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.02)"
+                }}
+              />
 
-                {/* YOUR Headline Information with Image's Font Style */}
-                <h1 className="text-5xl md:text-6xl font-extrabold tracking-wider uppercase text-white">
-                  BUILD &bull; AUTOMATE <br /> <span className="gradient-text">SCALE</span>
-                </h1>
+              {/* Dark gradient on left to ensure text legibility */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#071018]/95 via-[#071018]/75 to-transparent" />
 
-                {/* YOUR Paragraph Information */}
-                <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
-                  Turn manual tasks into scalable systems. I help businesses grow smarter with automation,
-                  CRM integrations, and optimized workflows.
-                </p>
-
-                {/* YOUR Button Information with Image's Styling */}
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <CalendlyTrigger
-                    url={calendlyUrl}
-                    className="flex items-center gap-2 bg-gray-800/60 border-2 border-gray-600 text-gray-200 px-6 py-2 rounded-md font-semibold hover:bg-white hover:text-dark-bg hover:border-white transition-all duration-300"
-                  >
-                    <PhoneCallIcon className="w-5 h-5" />
-                    Book a Call Now
-                  </CalendlyTrigger>
-                  <a
-                    href="#portfolio-gallery"
-                    className="bg-gray-200 text-dark-bg px-6 py-2 rounded-md font-semibold hover:bg-white transition-colors duration-300 flex items-center"
-                  >
-                    View Case Studies
-                  </a>
-                </div>
-
-                {/* YOUR Tags with Image's Styling */}
-                <div className="flex flex-wrap gap-3 pt-6">
-                  {HERO_TAGS.map((tag) => (
-                    <a
-                      key={tag.name}
-                      href={tag.href}
-                      className="border border-gray-600 rounded-full px-4 py-1 text-sm text-gray-400 hover:bg-gray-800 hover:text-white transition-colors"
-                      aria-label={`Learn more about ${tag.name}`}
-                    >
-                      {tag.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* --- Right Column: Image --- */}
-              <div className="hidden md:block">
-                <img
-                  src="/assets/hero.webp"
-                  alt="Mark Angel Fernandez - Automation Specialist"
-                  className="rounded-xl w-full max-w-md mx-auto object-cover"
-                  width="500"
-                  height="500"
-                  loading="eager"
-                />
-              </div>
-              
+              {/* faint connected-nodes vector behind text */}
+              <svg
+                className="absolute left-0 bottom-0 max-w-[60%] opacity-40 pointer-events-none"
+                viewBox="0 0 900 500"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                style={{ transform: "translateY(8%)" }}
+              >
+                <g stroke="rgba(20,220,230,0.55)" strokeWidth="1.1" strokeLinecap="round">
+                  <line x1="30" y1="320" x2="210" y2="200" />
+                  <line x1="210" y1="200" x2="380" y2="340" />
+                  <line x1="210" y1="200" x2="300" y2="80" />
+                  <line x1="380" y1="340" x2="540" y2="240" />
+                  <line x1="540" y1="240" x2="800" y2="260" />
+                </g>
+                <g fill="#6EF7FF" opacity="0.95">
+                  <circle cx="30" cy="320" r="4.6" />
+                  <circle cx="210" cy="200" r="5.2" />
+                  <circle cx="380" cy="340" r="4.4" />
+                  <circle cx="300" cy="80" r="4.6" />
+                  <circle cx="540" cy="240" r="4.1" />
+                  <circle cx="800" cy="260" r="3.8" />
+                </g>
+              </svg>
             </div>
+
+            {/* Content (z-10 so it's in front of SVG & image overlay) */}
+            <div className="relative z-10">
+              <div className="grid md:grid-cols-2 items-center">
+                {/* Left column: glass panel with text */}
+                <div className="p-8 md:p-12 lg:px-16 lg:py-20">
+                  {/* small cyan tag */}
+                  <span
+                    className="inline-block text-sm font-semibold px-4 py-1 rounded-md"
+                    style={{
+                      background: "rgba(6,85,100,0.55)",
+                      color: "#A7FBFF",
+                      backdropFilter: "blur(6px)"
+                    }}
+                  >
+                    Automation &bull; CRM &bull; Integrations
+                  </span>
+
+                  {/* Headline */}
+                  <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-wide uppercase text-white leading-tight">
+                    BUILD &bull; AUTOMATE
+                    <br />
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-white to-cyan-200">
+                      SCALE
+                    </span>
+                  </h1>
+
+                  {/* Paragraph */}
+                  <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed">
+                    Turn manual tasks into scalable systems. I help businesses grow smarter with
+                    automation, CRM integrations, and optimized workflows across Zapier, Make, and
+                    GoHighLevel.
+                  </p>
+
+                  {/* CTA buttons */}
+                  <div className="mt-8 flex flex-wrap gap-4 items-center">
+                    <CalendlyTrigger
+                      url={calendlyUrl}
+                      className="flex items-center gap-3 px-6 py-3 rounded-md font-semibold transition-all duration-250 shadow-sm"
+                    >
+                      <span
+                        className="flex items-center justify-center w-9 h-9 rounded-md"
+                        style={{
+                          background: "rgba(255,255,255,0.06)",
+                          border: "1px solid rgba(255,255,255,0.05)"
+                        }}
+                      >
+                        <PhoneCallIcon className="w-4 h-4 text-white" />
+                      </span>
+                      <span className="text-white">Book a Call</span>
+                    </CalendlyTrigger>
+
+                    <a
+                      href="#portfolio-gallery"
+                      className="px-6 py-3 rounded-md font-semibold bg-white text-[#071018] hover:opacity-95 transition"
+                    >
+                      View Case Studies
+                    </a>
+                  </div>
+
+                  {/* Tags pills */}
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    {HERO_TAGS.map((tag) => (
+                      <a
+                        key={tag.name}
+                        href={tag.href}
+                        aria-label={`Learn more about ${tag.name}`}
+                        className="inline-flex items-center justify-center rounded-full px-4 py-1 text-sm border"
+                        style={{
+                          color: "rgba(200,220,230,0.95)",
+                          borderColor: "rgba(120,140,160,0.18)",
+                          background: "transparent"
+                        }}
+                      >
+                        {tag.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right column intentionally empty, since image is absolute */}
+                <div className="hidden md:block" aria-hidden />
+              </div>
+            </div>
+
+            {/* very subtle bottom divider */}
+            <div className="border-t border-t-[rgba(255,255,255,0.03)]" />
           </div>
         </div>
       </div>
