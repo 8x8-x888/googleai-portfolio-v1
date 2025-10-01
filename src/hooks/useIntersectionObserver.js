@@ -1,4 +1,4 @@
-// src/hooks/useIntersectionObserver.js
+/* src/hooks/useIntersectionObserver.js */
 import { useState, useEffect, useRef } from 'react';
 
 export const useIntersectionObserver = (options) => {
@@ -9,17 +9,21 @@ export const useIntersectionObserver = (options) => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsIntersecting(true);
-        observer.unobserve(entry.target); // Observe only once
+        /*
+          Observe only once for the animation effect.
+        */
+        observer.unobserve(entry.target);
       }
     }, options);
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, [options]);
