@@ -1,4 +1,3 @@
-/* src/components/Hero.jsx */
 import React from 'react';
 import { HERO_TAGS } from '../assets/data';
 import { PhoneCallIcon } from '../assets/Icons';

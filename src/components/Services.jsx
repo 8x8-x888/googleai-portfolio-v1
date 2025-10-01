@@ -1,7 +1,6 @@
 import React from 'react';
 import { SERVICE_CARDS } from '../assets/data';
 
-// Single service card component
 const ServiceCard = ({ service }) => {
   const Icon = service.icon;
   return (

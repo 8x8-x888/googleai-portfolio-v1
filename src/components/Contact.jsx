@@ -1,4 +1,3 @@
-/* src/components/Contact.jsx */
 import React, { useState } from 'react';
 import { SendIcon, CheckIcon, ErrorIcon } from '../assets/Icons';
 

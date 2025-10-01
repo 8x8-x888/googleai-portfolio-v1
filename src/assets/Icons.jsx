@@ -1,4 +1,3 @@
-/* src/assets/Icons.jsx */
 import React from 'react';
 import { 
   Slack, HardDrive, Cpu, DollarSign, PhoneForwarded, Menu, X, 

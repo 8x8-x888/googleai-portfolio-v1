@@ -1,4 +1,3 @@
-/* src/components/Portfolio.jsx */
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import { PROJECTS } from '../assets/data';

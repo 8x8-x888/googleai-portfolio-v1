@@ -1,4 +1,3 @@
-/* src/assets/data.js */
 import { 
   ZapierBrandIcon, MakeBrandIcon, N8nBrandIcon, ApiIntegrationIcon,
   SlackIcon, DriveIcon, OpenAIIcon, XeroIcon 

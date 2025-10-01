@@ -1,4 +1,3 @@
-// src/components/ProjectGalleryModal.jsx
 import React, { useState, useEffect, useCallback } from 'react';
 import { CloseIcon, ChevronLeftIcon, ChevronRightIcon } from '../assets/Icons';
 
@@ -13,7 +12,7 @@ const ProjectGalleryModal = ({ isOpen, onClose, images = [], title = '' }) => {
   }, [isOpen]);
 
   const navigate = useCallback((direction) => {
-    if (isAnimating) return; // Prevent rapid clicking
+    if (isAnimating) return;
     setIsAnimating(true);
     setTimeout(() => {
       setCurrentIndex((prevIndex) => {
@@ -23,13 +22,12 @@ const ProjectGalleryModal = ({ isOpen, onClose, images = [], title = '' }) => {
           return prevIndex === 0 ? images.length - 1 : prevIndex - 1;
         }
       });
-      // Allow the animation to finish before enabling clicks again
       setTimeout(() => setIsAnimating(false), 150);
     }, 150);
   }, [images.length, isAnimating]);
 
-  const goToPrevious = () => navigate('prev');
-  const goToNext = () => navigate('next');
+  const goToPrevious = useCallback(() => navigate('prev'), [navigate]);
+  const goToNext = useCallback(() => navigate('next'), [navigate]);
 
   useEffect(() => {
     const handleKeyDown = (event) => {

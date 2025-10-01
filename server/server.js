@@ -1,4 +1,3 @@
-/* server/server.js */
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -15,7 +14,7 @@ app.use(helmet());
 app.use(express.json());
 
 const apiLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
+  windowMs: 15 * 60 * 1000, // 15 minutes
   max: 10,
   standardHeaders: true,
   legacyHeaders: false,
@@ -25,7 +24,7 @@ const apiLimiter = rateLimit({
 app.use('/api/', apiLimiter);
 
 const allowedOrigins = process.env.NODE_ENV === 'production'
-  ? ['https://your-deployed-frontend-url.com']
+  ? ['https://your-deployed-frontend-url.com'] // IMPORTANT: Replace with your actual frontend URL
   : ['http://localhost:5173'];
 
 const corsOptions = {

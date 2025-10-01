@@ -1,9 +1,5 @@
-// src/components/CalendlyTrigger.jsx
 import React from 'react';
 
-/**
- * A reusable button to open the Calendly pop-up widget.
- */
 const CalendlyTrigger = ({ url, className = '', children }) => {
   const handleClick = (e) => {
     e.preventDefault();
