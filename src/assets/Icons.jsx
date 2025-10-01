@@ -5,32 +5,36 @@ import {
   ChevronLeft, ChevronRight
 } from 'lucide-react';
 
+/* --- NEW / UPDATED Brand & Thematic Icons --- */
+
+// UPDATED: Using the new, simpler Zapier SVG from svgrepo.com
 export const ZapierBrandIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-    <path fill="#FF4A00" d="M101.613 0H0v51.13h75.432L0 204.872V256h101.613v-51.13H26.181L101.613 51.13V0zM256 0h-51.13v75.432l-32.258-32.258L154.387 0H128v128h26.387l-32.258-32.258L154.387 63.484V256h101.613v-51.13H180.568L256 51.13V0z"></path>
+  <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10.16 0H0V5.11H7.54L0 20.49V25.6H10.16V20.49H2.62L10.16 5.11V0ZM25.6 0H20.49V7.54L17.26 4.31L15.44 0H12.8V12.8H15.44L12.19 9.55L15.44 6.35V25.6H25.6V20.49H18.06L25.6 5.11V0Z" fill="#FF4A00"/>
   </svg>
 );
 
+// NEW: Component renders an <img> tag for the local make.webp file
 export const MakeBrandIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#6E44FF" d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0z"></path>
-    <path fill="#FFF" d="M12 4.2c-4.306 0-7.8 3.494-7.8 7.8s3.494 7.8 7.8 7.8 7.8-3.494 7.8-7.8-3.494-7.8-7.8-7.8zm0 13.595c-3.199 0-5.795-2.596-5.795-5.795S8.801 6.205 12 6.205s5.795 2.596 5.795 5.795-2.596 5.795-5.795 5.795z"></path>
-    <path fill="#FFF" d="M12.001 8.208a3.792 3.792 0 100 7.584 3.792 3.792 0 000-7.584z"></path>
-  </svg>
+  <img src="/assets/make.webp" alt="Make.com logo" className={className} />
 );
 
+// NEW: Component renders an <img> tag for the local n8n.webp file
 export const N8nBrandIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#1A8272" d="M18.15 6.843l-5.402 9.356a.41.41 0 01-.71 0L6.636 7.425l2.062-.002 3.65 6.322a.41.41 0 00.709 0l3.65-6.322zM12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0z"></path>
-  </svg>
+  <img src="/assets/n8n.webp" alt="n8n logo" className={className} />
 );
 
+// UPDATED: Using the new "continuous integration" SVG from svgrepo.com
 export const ApiIntegrationIcon = ({ className }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M8 7l-4 4 4 4m8-8l4 4-4 4m-5-9l-4 14" />
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <g id="Interface / activity_horizontal">
+      <path id="Vector" d="M3 12H5M5 12H9M5 12C5 12 5.05034 11.2343 5.86015 10.4244C6.67839 9.60619 7.79633 8.33031 9.5 8M19 12H21M19 12H15M19 12C19 12 18.9497 11.2343 18.1398 10.4244C17.3216 9.60619 16.2037 8.33031 14.5 8M9.5 8C10.702 7.10334 11.2333 7 12 7C12.7667 7 13.298 7.10334 14.5 8M9.5 8V16M14.5 8V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </g>
   </svg>
 );
 
+
+/* --- Standard Lucide Icons (Unchanged) --- */
 export const SlackIcon = Slack;
 export const DriveIcon = HardDrive;
 export const OpenAIIcon = Cpu;
