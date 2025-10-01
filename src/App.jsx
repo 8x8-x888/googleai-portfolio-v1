@@ -6,7 +6,7 @@ import Services from './components/Services.jsx';
 import Portfolio from './components/Portfolio.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
-import { useIntersectionObserver } from './hooks/useIntersectionObserver.jsx';
+import { useIntersectionObserver } from './hooks/useIntersectionObserver';
 
 const AnimatedSection = ({ id, children }) => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
