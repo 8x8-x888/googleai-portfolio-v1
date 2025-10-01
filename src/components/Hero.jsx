@@ -29,7 +29,7 @@ const Hero = () => {
             {/* Background portrait positioned to the right (fills right half) */}
             <div className="absolute inset-0">
               <img
-                src="/assets/hero-updated.png"
+                src="/assets/hero.webp"
                 alt="Mark Angel Fernandez portrait"
                 className="absolute right-0 top-0 h-full w-1/2 min-w-[420px] object-cover object-top"
                 width="1200"
