@@ -2,21 +2,18 @@
   "name": "nextgenva-react-portfolio",
   "private": true,
   "version": "1.0.0",
-  "description": "A production-ready portfolio for an Automation Virtual Assistant, built with React, Vite, and Tailwind CSS.",
+  "description": "A production-ready portfolio for an Automation Virtual Assistant.",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "format": "prettier --write \"src/**/*.{js,jsx,json,css,md}\""
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "axios": "^1.7.2",
     "lucide-react": "^0.400.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-google-recaptcha": "^3.1.0"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

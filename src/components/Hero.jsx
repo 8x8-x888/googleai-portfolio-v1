@@ -1,4 +1,4 @@
-// src/components/Hero.jsx
+/* src/components/Hero.jsx */
 import React from 'react';
 import { HERO_TAGS } from '../assets/data';
 import { PhoneCallIcon } from '../assets/Icons';
@@ -12,7 +12,6 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           
-          {/* Left Column: Text Content */}
           <div className="space-y-6">
             <span className="pill-tech">
               Automation &bull; CRM &bull; Integrations
@@ -49,7 +48,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column: Image */}
           <div className="hidden md:block">
             <img
               src="/assets/hero.webp"

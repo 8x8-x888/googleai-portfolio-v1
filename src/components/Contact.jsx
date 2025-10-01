@@ -1,4 +1,4 @@
-// src/components/Contact.jsx
+/* src/components/Contact.jsx */
 import React, { useState } from 'react';
 import { SendIcon, CheckIcon, ErrorIcon } from '../assets/Icons';
 
@@ -6,7 +6,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     firstName: '', lastName: '', email: '', phone: '', message: '',
   });
-  const [status, setStatus] = useState(null); // 'success', 'error', 'submitting', null
+  const [status, setStatus] = useState(null);
   const [message, setMessage] = useState('');
 
   const API_URL = import.meta.env.VITE_CONTACT_API_URL;
@@ -17,7 +17,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!API_URL || !API_SECRET) {
-      alert("Note: The contact form backend is not configured. Please check the README for setup instructions.");
+      alert("Note: The contact form backend is not configured.");
       return;
     }
     
@@ -37,7 +37,7 @@ const Contact = () => {
         setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
       } else {
         setStatus('error');
-        setMessage(result.error || 'Failed to send message. Please try again.');
+        setMessage(result.error || 'Failed to send message.');
       }
     } catch (error) {
       setStatus('error');
@@ -58,13 +58,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact-form" className="py-16 md:py-24" role="region" aria-label="Contact Form">
+    <div className="py-16 md:py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         <div className="section-header">
           <h2>LET’S BUILD TOGETHER</h2>
         </div>
-
         <div className="glass-card p-8 md:p-12">
           <p className="text-center text-lg text-gray-400 mb-8">
             Ready to automate? Fill out the form or book a call directly.
@@ -90,7 +88,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

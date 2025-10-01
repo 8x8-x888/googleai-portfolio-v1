@@ -1,18 +1,23 @@
-# Dependency directories
+# Dependencies
 /node_modules
 /dist
 
-# Environment files
+# Environment variables
 .env
 .env*.local
 
-# Editor directories
+# IDEs and editors
 .vscode/
 .idea/
-*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# macOS
+# Operating system files
 .DS_Store
+Thumbs.db
 
 # Vite
 .vite/

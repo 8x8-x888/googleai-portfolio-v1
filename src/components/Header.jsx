@@ -1,7 +1,7 @@
-// src/components/Header.jsx
+/* src/components/Header.jsx */
 import React, { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../assets/data';
-import { MenuIcon, CloseIcon, UserIcon } from '../assets/Icons';
+import { MenuIcon, CloseIcon } from '../assets/Icons';
 import CalendlyTrigger from './CalendlyTrigger';
 
 const NavItem = ({ href, children, onClick }) => (
@@ -35,7 +35,6 @@ const Header = () => {
           <span className="text-white font-bold text-lg">NextGenVA</span>
         </a>
 
-        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <NavItem key={link.name} href={link.href}>{link.name}</NavItem>
@@ -45,7 +44,6 @@ const Header = () => {
           </CalendlyTrigger>
         </nav>
 
-        {/* Mobile Nav Toggle */}
         <div className="lg:hidden">
           <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle navigation">
             {isOpen ? <CloseIcon className="w-7 h-7" /> : <MenuIcon className="w-7 h-7" />}
@@ -53,7 +51,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Nav Menu */}
       {isOpen && (
         <div className="lg:hidden bg-dark-bg/95 backdrop-blur-lg border-t border-gray-800">
           <nav className="flex flex-col items-center space-y-4 px-4 py-8">
