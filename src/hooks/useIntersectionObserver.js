@@ -10,7 +10,7 @@ export const useIntersectionObserver = (options) => {
       if (entry.isIntersecting) {
         setIsIntersecting(true);
         /*
-          Observe only once for the animation effect.
+          Stop observing the element once it's visible.
         */
         observer.unobserve(entry.target);
       }

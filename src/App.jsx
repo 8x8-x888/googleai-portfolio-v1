@@ -10,13 +10,13 @@ import Footer from './components/Footer';
 import { useIntersectionObserver } from './hooks/useIntersectionObserver';
 
 const AnimatedSection = ({ id, children }) => {
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
 
   return (
     <section
       id={id}
       ref={ref}
-      className={`py-16 md:py-24 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+      className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
       {children}
     </section>
