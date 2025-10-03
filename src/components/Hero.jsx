@@ -47,7 +47,7 @@ const Hero = () => {
                 >
                   <PhoneCallIcon className="w-5 h-5" />
                   Book a Call Now
-                </Cantrigger>
+                </CalendlyTrigger>
                 <a
                   href="#portfolio-gallery"
                   className="bg-gray-800/60 border border-gray-700 text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition-colors duration-300 flex items-center"
