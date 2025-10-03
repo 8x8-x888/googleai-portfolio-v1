@@ -1,95 +1,77 @@
-import React, { useState, useEffect } from 'react';
-import { NAV_LINKS } from '../assets/data';
-import { MenuIcon, CloseIcon } from '../assets/Icons';
+import React from 'react';
+import { HERO_TAGS } from '../assets/data';
+import { PhoneCallIcon } from '../assets/Icons';
 import CalendlyTrigger from './CalendlyTrigger';
 
-const NavItem = ({ href, children, onClick }) => (
-  <a
-    href={href}
-    onClick={onClick}
-    className="block lg:inline-block py-2 text-gray-300 hover:text-white transition-colors duration-300"
-  >
-    {children}
-  </a>
-);
-
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+const Hero = () => {
   const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  /*
-    NEW: This function handles the smooth scroll to top.
-  */
-  const handleLogoClick = (e) => {
-    // Prevent the default browser reload
-    e.preventDefault();
-    // Use the browser's built-in smooth scroll API
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-bg/80 backdrop-blur-lg border-b border-gray-800' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-        
-        {/* The onClick handler is now attached to the logo link */}
-        <a href="/" onClick={handleLogoClick} className="flex items-center gap-3">
-          <img 
-            src="/assets/Portfolio-Logo.png" 
-            alt="NextGen VA Logo" 
-            className="w-12 h-12 rounded-md" 
-          />
-          <div className="flex flex-col leading-none">
-            <span className="gradient-text text-xl md:text-2xl font-extrabold tracking-wider uppercase">
-              MARK ANGEL FERNANDEZ
+    <section 
+      id="hero" 
+      className="relative min-h-screen flex items-center" 
+      role="region" 
+      aria-label="Hero Section"
+    >
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/assets/hero.webp"
+          alt="Professional portrait background"
+          className="w-full h-full object-cover object-top"
+          loading="eager"
+        />
+        <div 
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to right, rgba(17, 24, 39, 0.95) 35%, rgba(17, 24, 39, 0.6) 60%, transparent 100%)' }}
+        ></div>
+      </div>
+      
+      <div 
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-20 md:pt-40 md:pb-28"
+      >
+        <div className="max-w-xl">
+          <div className="space-y-6">
+            <span className="pill-tech">
+              Automation &bull; CRM &bull; Integrations
             </span>
-            <span className="text-accent-cyan text-sm md:text-base font-medium">
-              NextGen VA
-            </span>
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
+              BUILD &bull; AUTOMATE <br className="hidden md:block" /> &bull; <span className="gradient-text">SCALE</span>
+            </h1>
+            <p className="text-lg text-gray-300">
+              Turn manual tasks into scalable systems. I help businesses grow smarter with automation,
+              CRM integrations, and optimized workflows.
+            </p>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <CalendlyTrigger
+                url={calendlyUrl}
+                className="flex items-center gap-2 bg-accent-cyan text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-accent-cyan/20 hover:bg-cyan-400 transition-all duration-300 transform hover:scale-105 btn-pulse"
+              >
+                <PhoneCallIcon className="w-5 h-5" />
+                Book a Call Now
+              </CalendlyTrigger>
+              <a
+                href="#portfolio-gallery"
+                className="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors duration-300 flex items-center"
+              >
+                View Case Studies
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-3 pt-6">
+              {HERO_TAGS.map((tag) => (
+                <a 
+                  key={tag.name} 
+                  href={tag.href} 
+                  className="bg-gray-800/70 text-gray-300 font-medium px-4 py-1.5 rounded-full text-sm hover:bg-gray-700 hover:text-white transition-colors duration-200"
+                >
+                  {tag.name}
+                </a>
+              ))}
+            </div>
           </div>
-        </a>
-
-        <nav className="hidden lg:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <NavItem key={link.name} href={link.href}>{link.name}</NavItem>
-          ))}
-          <CalendlyTrigger url={calendlyUrl} className="btn-primary ml-4">
-            Book a Call
-          </CalendlyTrigger>
-        </nav>
-
-        <div className="lg:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle navigation">
-            {isOpen ? <CloseIcon className="w-7 h-7" /> : <MenuIcon className="w-7 h-7" />}
-          </button>
         </div>
       </div>
-
-      {isOpen && (
-        <div className="lg:hidden bg-dark-bg/95 backdrop-blur-lg border-t border-gray-800">
-          <nav className="flex flex-col items-center space-y-4 px-4 py-8">
-            {NAV_LINKS.map((link) => (
-              <NavItem key={link.name} href={link.href} onClick={() => setIsOpen(false)}>{link.name}</NavItem>
-            ))}
-            <CalendlyTrigger url={calendlyUrl} className="btn-primary w-full mt-4">
-              Book a Call
-            </CalendlyTrigger>
-          </nav>
-        </div>
-      )}
-    </header>
+    </section>
   );
 };
 
-export default Header;
+export default Hero;
