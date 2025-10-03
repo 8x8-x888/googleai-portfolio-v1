@@ -1,8 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -27,13 +25,10 @@ const App = () => {
     <>
       <Header />
       <main id="main-content">
+        {/* Hero now contains About and Services */}
         <Hero />
-        <AnimatedSection id="about-me">
-          <About />
-        </AnimatedSection>
-        <AnimatedSection id="services">
-          <Services />
-        </AnimatedSection>
+        
+        {/* The rest of the page content starts here */}
         <AnimatedSection id="portfolio-gallery">
           <Portfolio />
         </AnimatedSection>
