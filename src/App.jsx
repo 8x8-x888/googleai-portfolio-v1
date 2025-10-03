@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -25,14 +24,11 @@ const App = () => {
   return (
     <>
       <Header />
+      {/* The Hero component now contains the Hero, About, and Services sections */}
+      <Hero />
+      
+      {/* The main content starts AFTER the unified hero block */}
       <main id="main-content">
-        {/* The Hero component now contains both the hero and about sections */}
-        <Hero />
-        
-        {/* The rest of the page begins with the Services section */}
-        <AnimatedSection id="services">
-          <Services />
-        </AnimatedSection>
         <AnimatedSection id="portfolio-gallery">
           <Portfolio />
         </AnimatedSection>
