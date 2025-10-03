@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
@@ -27,10 +26,10 @@ const App = () => {
     <>
       <Header />
       <main id="main-content">
+        {/* The Hero component now contains both the hero and about sections */}
         <Hero />
-        <AnimatedSection id="about-me">
-          <About />
-        </AnimatedSection>
+        
+        {/* The rest of the page begins with the Services section */}
         <AnimatedSection id="services">
           <Services />
         </AnimatedSection>
