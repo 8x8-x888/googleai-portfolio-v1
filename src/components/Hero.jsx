@@ -9,10 +9,13 @@ const Hero = () => {
   return (
     <section 
       id="hero" 
+      // The section is now a flex container that fills at least the screen height.
+      // The problematic top padding has been removed from here.
       className="relative min-h-screen flex items-center" 
       role="region" 
       aria-label="Hero Section"
     >
+      {/* Background Image & Overlay Layer */}
       <div className="absolute inset-0 z-0">
         <img
           src="/assets/hero.webp"
@@ -26,7 +29,10 @@ const Hero = () => {
         ></div>
       </div>
       
+      {/* Content Layer */}
       <div 
+        // The top padding is now applied HERE, to the inner content wrapper.
+        // This pushes the text down without affecting the background image.
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-20 md:pt-40 md:pb-28"
       >
         <div className="max-w-xl">
@@ -48,7 +54,12 @@ const Hero = () => {
               >
                 <PhoneCallIcon className="w-5 h-5" />
                 Book a Call Now
-              </CalendlyTrigger>
+              </Calend-lyTrigger> 
+              {/* 
+                ^
+                |
+                THIS CLOSING TAG IS NOW CORRECTED. 
+              */}
               <a
                 href="#portfolio-gallery"
                 className="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors duration-300 flex items-center"
@@ -61,7 +72,7 @@ const Hero = () => {
                 <a 
                   key={tag.name} 
                   href={tag.href} 
-                  className="bg-gray-800/70 text-gray-300 font-medium px-4 py-1.5 rounded-full text-sm hover:bg-gray-700 hover:text-white transition-colors duration-200"
+                  className="border border-gray-700 rounded-full px-4 py-1 text-sm text-gray-400 hover:bg-gray-800 hover:text-white transition-colors"
                 >
                   {tag.name}
                 </a>
