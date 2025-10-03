@@ -5,7 +5,6 @@ const About = () => {
     <div className="py-16 md:py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        {/* Centered Section Header */}
         <div className="section-header inline-block">
           <h2 className="text-center">ABOUT ME</h2>
         </div>
