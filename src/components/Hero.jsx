@@ -7,53 +7,48 @@ const Hero = () => {
   const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
 
   return (
-    <section 
+    <div 
       id="hero" 
-      // Main container with relative positioning to act as an anchor for overlayed elements
-      className="relative pt-32 pb-20 md:pt-48 md:pb-28 overflow-hidden" 
+      // This section is now positioned absolutely to fill the viewport height
+      className="absolute top-0 left-0 w-full h-screen z-0" 
       role="region" 
       aria-label="Hero Section"
     >
       {/* Background Image Layer */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0">
         <img
           src="/assets/hero.webp"
           alt="Professional portrait background"
-          className="w-full h-full object-cover"
+          // Crucially, object-position is set to 'top' to ensure your face is visible
+          className="w-full h-full object-cover object-top"
           loading="eager"
         />
-        {/* A very subtle tint to harmonize the image with the dark theme */}
-        <div className="absolute inset-0 bg-dark-bg/30"></div>
       </div>
 
       {/* Gradient Overlay for Text Readability */}
       <div 
-        className="absolute inset-0 z-10"
-        style={{ background: 'linear-gradient(to right, rgba(17, 24, 39, 0.95) 30%, rgba(17, 24, 39, 0.5) 60%, transparent 100%)' }}
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(to right, rgba(17, 24, 39, 0.95) 35%, rgba(17, 24, 39, 0.6) 60%, transparent 100%)' }}
       ></div>
       
       {/* Content Layer */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
         <div className="max-w-xl">
           <div className="space-y-6">
             
-            {/* Pill Style (Unchanged) */}
             <span className="pill-tech">
               Automation &bull; CRM &bull; Integrations
             </span>
 
-            {/* YOUR Headline Information */}
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
               BUILD &bull; AUTOMATE <br className="hidden md:block" /> &bull; <span className="gradient-text">SCALE</span>
             </h1>
 
-            {/* YOUR Paragraph Information */}
             <p className="text-lg text-gray-300">
               Turn manual tasks into scalable systems. I help businesses grow smarter with automation,
               CRM integrations, and optimized workflows.
             </p>
 
-            {/* --- NEW, MORE APPEALING BUTTON STYLES --- */}
             <div className="flex flex-wrap gap-4 pt-4">
               <CalendlyTrigger
                 url={calendlyUrl}
@@ -61,7 +56,7 @@ const Hero = () => {
               >
                 <PhoneCallIcon className="w-5 h-5" />
                 Book a Call Now
-              </CalendlyTrigger>
+              </Cantrigger>
               <a
                 href="#portfolio-gallery"
                 className="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors duration-300 flex items-center"
@@ -70,7 +65,6 @@ const Hero = () => {
               </a>
             </div>
             
-            {/* YOUR Tags */}
             <div className="flex flex-wrap gap-3 pt-6">
               {HERO_TAGS.map((tag) => (
                 <a 
@@ -86,7 +80,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
