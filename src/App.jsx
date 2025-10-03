@@ -46,29 +46,4 @@ const App = () => {
   );
 };
 
-export default App;```
-
-#### **File: `src/styles/index.css`**
-We need to remove the `height: 100%` rule and put the dot-grid background back on the `body`.
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* REMOVE the html, body, #root block */
-
-/* Base HTML and Body Styles */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-
-body {
-  /* PUT THE DOT-GRID BACKGROUND BACK */
-  background-color: #111827;
-  background-image: radial-gradient(circle at 1px 1px, rgba(200, 200, 200, 0.1) 1px, transparent 0);
-  background-size: 2.5rem 2.5rem;
-}
-
-/* ... (the rest of your CSS file remains the same) ... */
+export default App;
