@@ -1,7 +1,8 @@
 import React from 'react';
-import { HERO_TAGS } from '../assets/data';
+import { HERO_TAGS, SERVICE_CARDS } from '../assets/data';
 import { PhoneCallIcon } from '../assets/Icons';
 import CalendlyTrigger from './CalendlyTrigger';
+import ServiceCard from './ServiceCard';
 
 const Hero = () => {
   const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
@@ -57,6 +58,20 @@ const Hero = () => {
                   View Case Studies
                 </a>
               </div>
+              
+              {/* --- ADDED BACK: Technology Tags --- */}
+              <div className="flex flex-wrap gap-3 pt-6">
+                {HERO_TAGS.map((tag) => (
+                  <a 
+                    key={tag.name} 
+                    href={tag.href} 
+                    className="border border-gray-700 rounded-full px-4 py-1 text-sm text-gray-400 hover:bg-gray-800 hover:text-white transition-colors"
+                  >
+                    {tag.name}
+                  </a>
+                ))}
+              </div>
+              {/* ------------------------------------ */}
             </div>
           </div>
         </div>
@@ -79,6 +94,18 @@ const Hero = () => {
                 more valuable, creative, and strategic tasks."
               </blockquote>
             </div>
+          </div>
+        </div>
+
+        {/* --- PART 3: SERVICES (INTEGRATED) --- */}
+        <div id="services" className="py-16 md:py-24">
+          <div className="section-header">
+            <h2>SERVICES</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 mt-16">
+            {SERVICE_CARDS.map((service, index) => (
+              <ServiceCard key={index} service={service} />
+            ))}
           </div>
         </div>
 
