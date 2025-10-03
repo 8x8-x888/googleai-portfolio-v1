@@ -2,7 +2,6 @@ import React from 'react';
 import { HERO_TAGS, SERVICE_CARDS } from '../assets/data';
 import { PhoneCallIcon } from '../assets/Icons';
 import CalendlyTrigger from './CalendlyTrigger';
-import ServiceCard from './ServiceCard'; // We need to import this now
 
 const Hero = () => {
   const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
