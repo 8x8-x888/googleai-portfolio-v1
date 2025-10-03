@@ -24,11 +24,8 @@ const App = () => {
   return (
     <>
       <Header />
-      {/* The Hero component now contains the Hero, About, and Services sections */}
-      <Hero />
-      
-      {/* The main content starts AFTER the unified hero block */}
       <main id="main-content">
+        <Hero />
         <AnimatedSection id="portfolio-gallery">
           <Portfolio />
         </AnimatedSection>
