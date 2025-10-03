@@ -54,7 +54,7 @@ const Hero = () => {
               >
                 <PhoneCallIcon className="w-5 h-5" />
                 Book a Call Now
-              </Calend-lyTrigger> 
+              </CalendlyTrigger> 
               {/* 
                 ^
                 |
