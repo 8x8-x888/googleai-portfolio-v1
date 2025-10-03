@@ -1,117 +1,95 @@
-import React from 'react';
-import { HERO_TAGS, SERVICE_CARDS } from '../assets/data';
-import { PhoneCallIcon } from '../assets/Icons';
+import React, { useState, useEffect } from 'react';
+import { NAV_LINKS } from '../assets/data';
+import { MenuIcon, CloseIcon } from '../assets/Icons';
 import CalendlyTrigger from './CalendlyTrigger';
-import ServiceCard from './ServiceCard';
 
-const Hero = () => {
+const NavItem = ({ href, children, onClick }) => (
+  <a
+    href={href}
+    onClick={onClick}
+    className="block lg:inline-block py-2 text-gray-300 hover:text-white transition-colors duration-300"
+  >
+    {children}
+  </a>
+);
+
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  /*
+    NEW: This function handles the smooth scroll to top.
+  */
+  const handleLogoClick = (e) => {
+    // Prevent the default browser reload
+    e.preventDefault();
+    // Use the browser's built-in smooth scroll API
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
-    <section 
-      id="hero-container" 
-      className="relative bg-dark-bg overflow-hidden"
-    >
-      {/* Background Image & Overlay Layer */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/assets/hero.webp"
-          alt="Professional portrait background of Mark Angel Fernandez"
-          className="w-full h-full object-cover object-top"
-          loading="eager"
-        />
-        <div 
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, rgba(17, 24, 39, 1) 25%, rgba(17, 24, 39, 0.7) 55%, transparent 85%)' }}
-        ></div>
-      </div>
-      
-      {/* Content Wrapper */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-bg/80 backdrop-blur-lg border-b border-gray-800' : 'bg-transparent'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         
-        {/* --- PART 1: HERO CONTENT --- */}
-        <div id="hero" className="min-h-[90vh] flex items-center pt-24 pb-20">
-          <div className="max-w-xl">
-            <div className="space-y-6">
-              <span className="pill-tech">
-                Automation &bull; CRM &bull; Integrations
-              </span>
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
-                BUILD &bull; AUTOMATE <br className="hidden md:block" /> &bull; <span className="gradient-text">SCALE</span>
-              </h1>
-              <p className="text-lg text-gray-300">
-                Turn manual tasks into scalable systems. I help businesses grow smarter with automation,
-                CRM integrations, and optimized workflows.
-              </p>
-              <div className="flex flex-wrap gap-4 pt-4">
-                <CalendlyTrigger
-                  url={calendlyUrl}
-                  className="flex items-center gap-2 bg-accent-cyan text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-accent-cyan/20 hover:bg-cyan-400 transition-all duration-300 transform hover:scale-105 btn-pulse"
-                >
-                  <PhoneCallIcon className="w-5 h-5" />
-                  Book a Call Now
-                </CalendlyTrigger>
-                <a
-                  href="#portfolio-gallery"
-                  className="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors duration-300 flex items-center"
-                >
-                  View Case Studies
-                </a>
-              </div>
-              
-              {/* --- ADDED BACK: Technology Tags --- */}
-              <div className="flex flex-wrap gap-3 pt-6">
-                {HERO_TAGS.map((tag) => (
-                  <a 
-                    key={tag.name} 
-                    href={tag.href} 
-                    className="border border-gray-700 rounded-full px-4 py-1 text-sm text-gray-400 hover:bg-gray-800 hover:text-white transition-colors"
-                  >
-                    {tag.name}
-                  </a>
-                ))}
-              </div>
-              {/* ------------------------------------ */}
-            </div>
+        {/* The onClick handler is now attached to the logo link */}
+        <a href="/" onClick={handleLogoClick} className="flex items-center gap-3">
+          <img 
+            src="/assets/Portfolio-Logo.png" 
+            alt="NextGen VA Logo" 
+            className="w-12 h-12 rounded-md" 
+          />
+          <div className="flex flex-col leading-none">
+            <span className="gradient-text text-xl md:text-2xl font-extrabold tracking-wider uppercase">
+              MARK ANGEL FERNANDEZ
+            </span>
+            <span className="text-accent-cyan text-sm md:text-base font-medium">
+              NextGen VA
+            </span>
           </div>
-        </div>
+        </a>
 
-        {/* --- PART 2: ABOUT ME CONTENT (INTEGRATED) --- */}
-        <div id="about-me" className="py-16 md:py-24">
-          <div className="max-w-4xl">
-            <div className="section-header">
-              <h2>ABOUT ME</h2>
-            </div>
-            <div className="mt-8 space-y-8">
-              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-                I build the digital engines that drive efficiency. My expertise lies in
-                transforming complex manual processes into seamless, automated
-                systems using <strong className="font-semibold text-primary-blue">Zapier</strong>, <strong className="font-semibold text-accent-cyan">Make</strong>, and <strong className="font-semibold text-primary-blue">n8n</strong>. I architect solutions that save
-                time, eliminate errors, and unlock scalable growth.
-              </p>
-              <blockquote className="max-w-3xl text-left text-lg italic text-gray-400 border-l-4 border-accent-cyan pl-6">
-                "The goal of automation is not to eliminate work, but to elevate human effort to
-                more valuable, creative, and strategic tasks."
-              </blockquote>
-            </div>
-          </div>
-        </div>
+        <nav className="hidden lg:flex items-center gap-8">
+          {NAV_LINKS.map((link) => (
+            <NavItem key={link.name} href={link.href}>{link.name}</NavItem>
+          ))}
+          <CalendlyTrigger url={calendlyUrl} className="btn-primary ml-4">
+            Book a Call
+          </CalendlyTrigger>
+        </nav>
 
-        {/* --- PART 3: SERVICES (INTEGRATED) --- */}
-        <div id="services" className="py-16 md:py-24">
-          <div className="section-header">
-            <h2>SERVICES</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
-            {SERVICE_CARDS.map((service, index) => (
-              <ServiceCard key={index} service={service} />
-            ))}
-          </div>
+        <div className="lg:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle navigation">
+            {isOpen ? <CloseIcon className="w-7 h-7" /> : <MenuIcon className="w-7 h-7" />}
+          </button>
         </div>
-
       </div>
-    </section>
+
+      {isOpen && (
+        <div className="lg:hidden bg-dark-bg/95 backdrop-blur-lg border-t border-gray-800">
+          <nav className="flex flex-col items-center space-y-4 px-4 py-8">
+            {NAV_LINKS.map((link) => (
+              <NavItem key={link.name} href={link.href} onClick={() => setIsOpen(false)}>{link.name}</NavItem>
+            ))}
+            <CalendlyTrigger url={calendlyUrl} className="btn-primary w-full mt-4">
+              Book a Call
+            </CalendlyTrigger>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 };
 
-export default Hero;
+export default Header;
