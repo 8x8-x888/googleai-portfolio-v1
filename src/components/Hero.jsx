@@ -1,33 +1,36 @@
 import React from 'react';
-import { HERO_TAGS } from '../assets/data';
+import { HERO_TAGS, SERVICE_CARDS } from '../assets/data';
 import { PhoneCallIcon } from '../assets/Icons';
 import CalendlyTrigger from './CalendlyTrigger';
+import ServiceCard from './ServiceCard';
 
 const Hero = () => {
   const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
 
   return (
     <section 
-      id="hero" 
-      className="relative overflow-hidden"
+      id="hero-container" 
+      className="relative bg-dark-bg overflow-hidden"
     >
       {/* Background Image & Overlay Layer */}
       <div className="absolute inset-0 z-0">
         <img
           src="/assets/hero.webp"
-          alt="Professional portrait background"
+          alt="Professional portrait background of Mark Angel Fernandez"
           className="w-full h-full object-cover object-center md:object-top"
           loading="eager"
         />
         <div 
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, rgba(17, 24, 39, 0.95) 30%, rgba(17, 24, 39, 0.6) 55%, transparent 80%)' }}
+          style={{ background: 'linear-gradient(to right, rgba(17, 24, 39, 1) 25%, rgba(17, 24, 39, 0.7) 55%, transparent 85%)' }}
         ></div>
       </div>
       
-      {/* Content Layer */}
+      {/* Content Wrapper for all three sections */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="min-h-screen flex items-center pt-24 pb-20">
+        
+        {/* --- PART 1: HERO INTRO CONTENT --- */}
+        <div id="hero" className="min-h-[90vh] flex items-center pt-24 pb-20">
           <div className="max-w-xl">
             <div className="space-y-6">
               <span className="inline-block bg-cyan-900/70 text-cyan-300 px-4 py-1 rounded-md text-sm font-semibold">
@@ -69,6 +72,40 @@ const Hero = () => {
             </div>
           </div>
         </div>
+
+        {/* --- PART 2: ABOUT ME CONTENT (INTEGRATED) --- */}
+        <div id="about-me" className="py-16 md:py-24">
+          <div className="max-w-4xl">
+            <div className="section-header">
+              <h2>ABOUT ME</h2>
+            </div>
+            <div className="mt-8 space-y-8">
+              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+                I build the digital engines that drive efficiency. My expertise lies in
+                transforming complex manual processes into seamless, automated
+                systems using <strong className="font-semibold text-primary-blue">Zapier</strong>, <strong className="font-semibold text-accent-cyan">Make</strong>, and <strong className="font-semibold text-primary-blue">n8n</strong>. I architect solutions that save
+                time, eliminate errors, and unlock scalable growth.
+              </p>
+              <blockquote className="max-w-3xl text-left text-lg italic text-gray-400 border-l-4 border-accent-cyan pl-6">
+                "The goal of automation is not to eliminate work, but to elevate human effort to
+                more valuable, creative, and strategic tasks."
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        {/* --- PART 3: SERVICES CONTENT (INTEGRATED) --- */}
+        <div id="services" className="py-16 md:py-24">
+          <div className="section-header">
+            <h2>SERVICES</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 mt-16">
+            {SERVICE_CARDS.map((service, index) => (
+              <ServiceCard key={index} service={service} />
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
