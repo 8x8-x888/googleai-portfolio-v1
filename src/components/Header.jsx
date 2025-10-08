@@ -71,23 +71,23 @@ const Header = () => {
         </div>
       </div>
 
-      <div
-        className={`lg:hidden bg-dark-bg/95 backdrop-blur-lg border-t border-gray-800 mobile-menu ${isOpen ? 'open' : ''}`}
-      >
-        <nav className="flex flex-col items-center space-y-4 px-4 py-8">
-          {NAV_LINKS.map((link) => (
-            <NavItem key={link.name} href={link.href} onClick={() => setIsOpen(false)}>
-              {link.name}
-            </NavItem>
-          ))}
-          <CalendlyTrigger
-            url={calendlyUrl}
-            className="btn-primary btn-secondary-pulse w-full mt-4"
-          >
-            Book a Call
-          </CalendlyTrigger>
-        </nav>
-      </div>
+      {isOpen && (
+        <div className="lg:hidden bg-dark-bg/95 backdrop-blur-lg border-t border-gray-800">
+          <nav className="flex flex-col items-center space-y-4 px-4 py-8">
+            {NAV_LINKS.map((link) => (
+              <NavItem key={link.name} href={link.href} onClick={() => setIsOpen(false)}>
+                {link.name}
+              </NavItem>
+            ))}
+            <CalendlyTrigger
+              url={calendlyUrl}
+              className="btn-primary btn-secondary-pulse w-full mt-4"
+            >
+              Book a Call
+            </CalendlyTrigger>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
