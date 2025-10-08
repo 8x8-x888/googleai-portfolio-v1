@@ -44,19 +44,19 @@ const Hero = () => {
                 automation, CRM integrations, and optimized workflows.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
+                <a
+                  href="#portfolio-gallery"
+                  className="flex items-center bg-accent-cyan text-black px-6 py-3 rounded-lg font-semibold shadow-lg shadow-accent-cyan/30 hover:bg-cyan-300 transition-all duration-300 transform hover:scale-105 btn-pulse"
+                >
+                  View Case Studies
+                </a>
                 <CalendlyTrigger
                   url={calendlyUrl}
-                  className="flex items-center gap-2 bg-accent-cyan text-black px-6 py-3 rounded-lg font-semibold shadow-lg shadow-accent-cyan/30 hover:bg-cyan-300 transition-all duration-300 transform hover:scale-105 btn-pulse"
+                  className="bg-gray-800/60 border border-gray-700 text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition-colors duration-300 flex items-center gap-2"
                 >
                   <PhoneCallIcon className="w-5 h-5" />
                   Book a Call Now
                 </CalendlyTrigger>
-                <a
-                  href="#portfolio-gallery"
-                  className="bg-gray-800/60 border border-gray-700 text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition-colors duration-300 flex items-center"
-                >
-                  View Case Studies
-                </a>
               </div>
               <div className="flex flex-wrap gap-3 pt-6">
                 {HERO_TAGS.map((tag) => (
