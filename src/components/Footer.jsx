@@ -1,23 +1,14 @@
 import React from 'react';
 import { CopyrightIcon, LinkedinIcon, OnlineJobsIcon, UpworkIcon } from '../assets/Icons';
-import ObfuscatedEmail from './ObfuscatedEmail';
 
 const Footer = () => {
   return (
     <footer className="bg-dark-bg border-t-2 border-gray-800 py-8 mt-16" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-6 md:space-y-0">
-        
+
         <div className="flex items-center text-sm text-gray-400 space-x-2">
           <CopyrightIcon className="w-4 h-4" />
           <p>2025 &bull; Mark Angel Fernandez</p>
-        </div>
-
-        <div className="text-sm text-gray-400">
-          Contact: 
-          <ObfuscatedEmail 
-            email="your.email@example.com" 
-            className="ml-2 font-semibold text-gray-300 hover:text-primary-blue transition-colors" 
-          />
         </div>
 
         <div className="flex space-x-6">
@@ -31,11 +22,12 @@ const Footer = () => {
             <UpworkIcon className="w-6 h-6" />
           </a>
         </div>
-        
+
+        <div className="text-sm text-gray-400 hidden sm:block">Powered by React &amp; Tailwind CSS</div>
+
       </div>
     </footer>
   );
 };
 
-// ✅ Add default export here
 export default Footer;

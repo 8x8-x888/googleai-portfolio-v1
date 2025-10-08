@@ -17,7 +17,7 @@ const Hero = () => {
         <img
           src="/assets/hero.webp"
           alt="Professional portrait background of Mark Angel Fernandez"
-          className="w-full h-full object-cover object-center md:object-top"
+          className="w-full h-full object-cover object-center md:object-top opacity-90"
           loading="eager"
         />
         <div 

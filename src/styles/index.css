@@ -10,12 +10,16 @@ html {
 
 body {
   /* This is the base dark color of your theme */
-  background-color: #111827; /* dark-bg */
+  background-color: transparent; /* dark-bg */
 
   /* 
     This adds the subtle, top-down radial gradient for a deep-space effect.
   */
   background-image: radial-gradient(ellipse 40% 70% at 50% -10%, rgba(12, 74, 110, 0.3), transparent);
+}
+
+main > * {
+    background-color: transparent !important;
 }
 
 /* Base Typography Layer */

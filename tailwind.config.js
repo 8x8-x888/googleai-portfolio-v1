@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         'primary-blue': '#3B82F6',
-        'accent-cyan': '#06B6D4',
+        'accent-cyan': '#00FFFF',
         'dark-bg': '#111827',
         'light-text': '#F3F4F6',
       },

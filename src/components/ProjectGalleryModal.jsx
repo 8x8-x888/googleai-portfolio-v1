@@ -46,6 +46,8 @@ const ProjectGalleryModal = ({ isOpen, onClose, images = [], title = '' }) => {
   
   if (!isOpen) return null;
 
+  const chevronColorClass = title === 'n8n Regional Sales Reporting' ? 'text-white' : 'text-black';
+
   return (
     <div
       className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-4"
@@ -79,14 +81,14 @@ const ProjectGalleryModal = ({ isOpen, onClose, images = [], title = '' }) => {
               className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
               aria-label="Previous image"
             >
-              <ChevronLeftIcon className="w-8 h-8 text-white" />
+              <ChevronLeftIcon className={`w-8 h-8 ${chevronColorClass} animate-pulse`} />
             </button>
             <button
               onClick={goToNext}
               className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
               aria-label="Next image"
             >
-              <ChevronRightIcon className="w-8 h-8 text-white" />
+              <ChevronRightIcon className={`w-8 h-8 ${chevronColorClass} animate-pulse`} />
             </button>
           </>
         )}

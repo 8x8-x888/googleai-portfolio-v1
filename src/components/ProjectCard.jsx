@@ -5,7 +5,7 @@ const ProjectCard = ({ project, reverse = false, onDemoClick }) => {
   const PrimaryToolIcon = project.primaryTool?.icon;
 
   return (
-    <article className={`glass-card flex flex-col ${direction} gap-8 p-6 md:p-8 items-center`}>
+    <article className={`glass-card flex flex-col ${direction} gap-8 p-6 md:p-8 items-center transition-transform duration-500 ease-out hover:scale-105`}>
       
       <div className="md:w-1/2 rounded-lg overflow-hidden border-2 border-gray-700/50 group">
         <img
@@ -40,21 +40,15 @@ const ProjectCard = ({ project, reverse = false, onDemoClick }) => {
         </div>
         
         <div className="flex flex-wrap items-center gap-4 pt-4">
-          {typeof onDemoClick === 'function' && (
+          {project.primaryTool && typeof onDemoClick === 'function' && (
             <button
               onClick={onDemoClick}
-              className="font-semibold text-accent-cyan hover:text-white transition-colors self-start"
+              className="flex items-center gap-2 bg-gray-900/50 border border-gray-700 rounded-lg px-3 py-1.5 text-sm font-semibold hover:bg-gray-800/70 transition-colors btn-subtle-pulse"
               aria-label={`Open screenshots for ${project.title}`}
             >
-              View Screenshots &rarr;
-            </button>
-          )}
-
-          {project.primaryTool && (
-            <div className="flex items-center gap-2 bg-gray-900/50 border border-gray-700 rounded-lg px-3 py-1.5 text-sm font-semibold">
               <PrimaryToolIcon className="w-5 h-5" />
-              <span>{project.primaryTool.name}</span>
-            </div>
+              <span>{`View ${project.primaryTool.name} Screenshots`}</span>
+            </button>
           )}
         </div>
       </div>

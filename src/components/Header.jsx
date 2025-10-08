@@ -58,7 +58,7 @@ const Header = () => {
           {NAV_LINKS.map((link) => (
             <NavItem key={link.name} href={link.href}>{link.name}</NavItem>
           ))}
-          <CalendlyTrigger url={calendlyUrl} className="btn-primary ml-4">
+          <CalendlyTrigger url={calendlyUrl} className="btn-primary btn-secondary-pulse ml-4">
             Book a Call
           </CalendlyTrigger>
         </nav>
@@ -76,7 +76,7 @@ const Header = () => {
             {NAV_LINKS.map((link) => (
               <NavItem key={link.name} href={link.href} onClick={() => setIsOpen(false)}>{link.name}</NavItem>
             ))}
-            <CalendlyTrigger url={calendlyUrl} className="btn-primary w-full mt-4">
+            <CalendlyTrigger url={calendlyUrl} className="btn-primary btn-secondary-pulse w-full mt-4">
               Book a Call
             </CalendlyTrigger>
           </nav>

@@ -5,6 +5,7 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { useIntersectionObserver } from './hooks/useIntersectionObserver';
+import ParticlesComponent from './components/ParticlesComponent';
 
 const AnimatedSection = ({ id, children }) => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
@@ -23,6 +24,7 @@ const AnimatedSection = ({ id, children }) => {
 const App = () => {
   return (
     <>
+      <ParticlesComponent id="particles" />
       <Header />
       <main id="main-content">
         <Hero />
