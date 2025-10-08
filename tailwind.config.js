@@ -10,7 +10,7 @@ export default {
         'light-text': '#F3F4F6',
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
       },
       keyframes: {
         'fade-in-up': {
