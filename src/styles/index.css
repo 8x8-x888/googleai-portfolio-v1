@@ -32,7 +32,7 @@ main > * {
   h2,
   h3,
   h4 {
-    @apply font-bold tracking-tight text-light-text;
+    @apply font-headings font-bold tracking-tight text-light-text;
   }
   h2 {
     @apply text-4xl sm:text-5xl;

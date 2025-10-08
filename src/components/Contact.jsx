@@ -128,7 +128,7 @@ const Contact = () => {
               ></textarea>
               <button
                 type="submit"
-                className="btn-primary w-full flex items-center justify-center gap-2"
+                className="w-full flex items-center justify-center gap-2 bg-highlight text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-highlight/30 hover:brightness-95 transition-all duration-300 transform hover:scale-105"
                 disabled={status === 'submitting'}
               >
                 {status === 'submitting' ? (

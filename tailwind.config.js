@@ -4,13 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-blue': '#3B82F6',
-        'accent-cyan': '#00FFFF',
+        'primary-blue': '#4361EE',
+        'accent-cyan': '#00F5D4',
+        'highlight': '#F72585',
         'dark-bg': '#111827',
         'light-text': '#F3F4F6',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        headings: ['Space Grotesk', 'sans-serif'],
       },
       keyframes: {
         'fade-in-up': {

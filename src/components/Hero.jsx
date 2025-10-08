@@ -32,11 +32,11 @@ const Hero = () => {
         <div id="hero" className="min-h-[90vh] flex items-center pt-24 pb-20">
           <div className="max-w-xl">
             <div className="space-y-6">
-              <span className="inline-block bg-cyan-900/70 text-cyan-300 px-4 py-1 rounded-md text-sm font-semibold">
+              <span className="inline-block bg-highlight/20 text-highlight px-4 py-1 rounded-md text-sm font-semibold">
                 Automation &bull; CRM &bull; Integrations
               </span>
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
-                BUILD &bull; AUTOMATE <br className="hidden md:block" /> &bull;{' '}
+                BUILD &bull; <span className="gradient-text">AUTO</span>MATE <br className="hidden md:block" /> &bull;{' '}
                 <span className="gradient-text">SCALE</span>
               </h1>
               <p className="text-lg text-gray-300">
@@ -46,7 +46,7 @@ const Hero = () => {
               <div className="flex flex-wrap gap-4 pt-4">
                 <a
                   href="#portfolio-gallery"
-                  className="flex items-center bg-accent-cyan text-black px-6 py-3 rounded-lg font-semibold shadow-lg shadow-accent-cyan/30 hover:bg-cyan-300 transition-all duration-300 transform hover:scale-105 btn-pulse"
+                  className="flex items-center bg-accent-cyan text-black px-6 py-3 rounded-lg font-semibold shadow-lg shadow-accent-cyan/30 hover:brightness-95 transition-all duration-300 transform hover:scale-105 btn-pulse"
                 >
                   View Case Studies
                 </a>
@@ -56,7 +56,7 @@ const Hero = () => {
                 >
                   <PhoneCallIcon className="w-5 h-5" />
                   Book a Call Now
-                </CalendlyTrigger>
+                </ CalendlyTrigger>
               </div>
               <div className="flex flex-wrap gap-3 pt-6">
                 {HERO_TAGS.map((tag) => (
@@ -83,9 +83,9 @@ const Hero = () => {
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
                 I build the digital engines that drive efficiency. My expertise lies in transforming
                 complex manual processes into seamless, automated systems using{' '}
-                <strong className="font-semibold text-primary-blue">Zapier</strong>,{' '}
-                <strong className="font-semibold text-accent-cyan">Make</strong>, and{' '}
-                <strong className="font-semibold text-primary-blue">n8n</strong>. I architect
+                <strong className="gradient-text">Zapier</strong>,{' '}
+                <strong className="gradient-text">Make</strong>, and{' '}
+                <strong className="gradient-text">n8n</strong>. I architect
                 solutions that save time, eliminate errors, and unlock scalable growth.
               </p>
               <blockquote className="max-w-3xl text-left text-lg italic text-gray-400 border-l-4 border-accent-cyan pl-6">

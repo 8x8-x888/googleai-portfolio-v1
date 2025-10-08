@@ -10,7 +10,7 @@ const ServiceCard = ({ service }) => {
       <ul className="space-y-2 text-gray-300 border-t border-gray-700 pt-4">
         {service.details.map((detail, index) => (
           <li key={index} className="flex items-start">
-            <span className="text-accent-cyan mr-3 mt-1 text-lg leading-none">&rarr;</span>
+            <span className="text-highlight mr-3 mt-1 text-lg leading-none">&rarr;</span>
             {detail}
           </li>
         ))}
