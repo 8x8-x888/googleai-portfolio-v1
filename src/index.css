@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Add a visible focus ring to keyboard-focused elements */
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent-cyan rounded-sm;
+  }
+}
+
 @layer components {
   /* Only apply pulse animation if the user has not requested reduced motion */
   @media (prefers-reduced-motion: no-preference) {
