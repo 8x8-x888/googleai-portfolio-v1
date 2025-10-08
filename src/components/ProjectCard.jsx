@@ -5,8 +5,9 @@ const ProjectCard = ({ project, reverse = false, onDemoClick }) => {
   const PrimaryToolIcon = project.primaryTool?.icon;
 
   return (
-    <article className={`glass-card flex flex-col ${direction} gap-8 p-6 md:p-8 items-center transition-transform duration-500 ease-out hover:scale-105`}>
-      
+    <article
+      className={`glass-card flex flex-col ${direction} gap-8 p-6 md:p-8 items-center transition-transform duration-500 ease-out hover:scale-105`}
+    >
       <div className="md:w-1/2 rounded-lg overflow-hidden border-2 border-gray-700/50 group">
         <img
           src={project.image}
@@ -19,10 +20,8 @@ const ProjectCard = ({ project, reverse = false, onDemoClick }) => {
       </div>
 
       <div className="md:w-1/2 flex flex-col justify-center space-y-5">
-        <h3 className="text-2xl font-bold text-primary-blue">
-          {project.title}
-        </h3>
-        
+        <h3 className="text-2xl font-bold text-primary-blue">{project.title}</h3>
+
         <blockquote className="text-lg italic text-gray-300 border-l-4 border-accent-cyan pl-4">
           {project.quote}
         </blockquote>
@@ -38,7 +37,7 @@ const ProjectCard = ({ project, reverse = false, onDemoClick }) => {
             );
           })}
         </div>
-        
+
         <div className="flex flex-wrap items-center gap-4 pt-4">
           {project.primaryTool && typeof onDemoClick === 'function' && (
             <button

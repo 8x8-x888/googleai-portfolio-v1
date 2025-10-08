@@ -20,6 +20,9 @@ const Portfolio = () => {
     setCurrentTitle('');
   };
 
+  const chevronColor =
+    currentTitle === 'n8n Regional Sales Reporting' ? 'text-white' : 'text-black';
+
   return (
     <div className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,7 +40,13 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
-      <ProjectGalleryModal isOpen={isOpen} onClose={closeGallery} images={currentImages} title={currentTitle} />
+      <ProjectGalleryModal
+        isOpen={isOpen}
+        onClose={closeGallery}
+        images={currentImages}
+        title={currentTitle}
+        chevronColor={chevronColor}
+      />
     </div>
   );
 };

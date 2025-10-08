@@ -1,8 +1,22 @@
 import React from 'react';
-import { 
-  Slack, HardDrive, Cpu, DollarSign, PhoneForwarded, Menu, X, 
-  Copyright, Linkedin, Clock, Send, CheckCircle, AlertTriangle, User, Hash,
-  ChevronLeft, ChevronRight
+import {
+  Slack,
+  HardDrive,
+  Cpu,
+  DollarSign,
+  PhoneForwarded,
+  Menu,
+  X,
+  Copyright,
+  Linkedin,
+  Clock,
+  Send,
+  CheckCircle,
+  AlertTriangle,
+  User,
+  Hash,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 
 /* --- Brand & Thematic Icons (Using Local Image Assets) --- */
@@ -26,7 +40,6 @@ export const N8nBrandIcon = ({ className }) => (
 export const ApiIntegrationIcon = ({ className }) => (
   <img src="/assets/integration.webp" alt="API Integration icon" className={className} />
 );
-
 
 /* --- Standard Lucide Icons (Unchanged) --- */
 export const SlackIcon = Slack;

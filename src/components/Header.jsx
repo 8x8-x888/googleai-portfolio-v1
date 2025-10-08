@@ -35,28 +35,29 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-bg/80 backdrop-blur-lg border-b border-gray-800' : 'bg-transparent'}`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-bg/80 backdrop-blur-lg border-b border-gray-800' : 'bg-transparent'}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-        
         <a href="/" onClick={handleLogoClick} className="flex items-center gap-3">
-          <img 
-            src="/assets/Portfolio-Logo.png" 
-            alt="NextGen VA Logo" 
-            className="w-12 h-12 rounded-md" 
+          <img
+            src="/assets/Portfolio-Logo.png"
+            alt="NextGen VA Logo"
+            className="w-12 h-12 rounded-md"
           />
           <div className="flex flex-col leading-none">
             <span className="gradient-text text-xl md:text-2xl font-extrabold tracking-wider uppercase">
               MARK ANGEL FERNANDEZ
             </span>
-            <span className="text-accent-cyan text-sm md:text-base font-medium">
-              NextGen VA
-            </span>
+            <span className="text-accent-cyan text-sm md:text-base font-medium">NextGen VA</span>
           </div>
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <NavItem key={link.name} href={link.href}>{link.name}</NavItem>
+            <NavItem key={link.name} href={link.href}>
+              {link.name}
+            </NavItem>
           ))}
           <CalendlyTrigger url={calendlyUrl} className="btn-primary btn-secondary-pulse ml-4">
             Book a Call
@@ -74,9 +75,14 @@ const Header = () => {
         <div className="lg:hidden bg-dark-bg/95 backdrop-blur-lg border-t border-gray-800">
           <nav className="flex flex-col items-center space-y-4 px-4 py-8">
             {NAV_LINKS.map((link) => (
-              <NavItem key={link.name} href={link.href} onClick={() => setIsOpen(false)}>{link.name}</NavItem>
+              <NavItem key={link.name} href={link.href} onClick={() => setIsOpen(false)}>
+                {link.name}
+              </NavItem>
             ))}
-            <CalendlyTrigger url={calendlyUrl} className="btn-primary btn-secondary-pulse w-full mt-4">
+            <CalendlyTrigger
+              url={calendlyUrl}
+              className="btn-primary btn-secondary-pulse w-full mt-4"
+            >
               Book a Call
             </CalendlyTrigger>
           </nav>

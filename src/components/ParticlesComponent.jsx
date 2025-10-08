@@ -1,27 +1,25 @@
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
+import React, { useEffect, useMemo, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
 
 const ParticlesComponent = (props) => {
-  const [init, setInit] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => {
-      setInit(true);
+      setIsInitialized(true);
     });
   }, []);
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
+  const particlesLoaded = () => {};
 
   const options = useMemo(
     () => ({
       background: {
         color: {
-          value: "transparent",
+          value: 'transparent',
         },
       },
       fpsLimit: 120,
@@ -29,11 +27,11 @@ const ParticlesComponent = (props) => {
         events: {
           onClick: {
             enable: true,
-            mode: "repulse",
+            mode: 'repulse',
           },
           onHover: {
             enable: true,
-            mode: 'grab'
+            mode: 'grab',
           },
         },
         modes: {
@@ -48,27 +46,27 @@ const ParticlesComponent = (props) => {
             distance: 200,
             links: {
               opacity: 0.5,
-              color: '#ffffff'
-            }
-          }
+              color: '#ffffff',
+            },
+          },
         },
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: '#ffffff',
         },
         links: {
-          color: "#ffffff",
+          color: '#ffffff',
           distance: 150,
           enable: true,
           opacity: 0.5,
           width: 1,
         },
         move: {
-          direction: "none",
+          direction: 'none',
           enable: true,
           outModes: {
-            default: "bounce",
+            default: 'bounce',
           },
           random: false,
           speed: 2,
@@ -84,7 +82,7 @@ const ParticlesComponent = (props) => {
           value: 0.5,
         },
         shape: {
-          type: "circle",
+          type: 'circle',
         },
         size: {
           value: { min: 1, max: 5 },
@@ -92,8 +90,12 @@ const ParticlesComponent = (props) => {
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
+
+  if (!isInitialized) {
+    return null;
+  }
 
   return <Particles id={props.id} init={particlesLoaded} options={options} />;
 };

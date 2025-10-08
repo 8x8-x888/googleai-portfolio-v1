@@ -15,16 +15,23 @@ body {
   /* 
     This adds the subtle, top-down radial gradient for a deep-space effect.
   */
-  background-image: radial-gradient(ellipse 40% 70% at 50% -10%, rgba(12, 74, 110, 0.3), transparent);
+  background-image: radial-gradient(
+    ellipse 40% 70% at 50% -10%,
+    rgba(12, 74, 110, 0.3),
+    transparent
+  );
 }
 
 main > * {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Base Typography Layer */
 @layer base {
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-bold tracking-tight text-light-text;
   }
   h2 {
@@ -58,7 +65,7 @@ main > * {
   .glass-card {
     @apply bg-gray-900/50 border border-gray-700 rounded-2xl p-8 transition-all duration-300 hover:border-accent-cyan/50 hover:bg-gray-900;
   }
-  
+
   /* Redesigned Input Field */
   .input-field {
     @apply w-full p-3 rounded-lg bg-gray-900/70 border-2 border-gray-700 text-light-text placeholder-gray-500;
@@ -83,7 +90,16 @@ main > * {
   will-change: transform, box-shadow;
 }
 @keyframes pulse-cta {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.5); }
-  70% { transform: scale(1.04); box-shadow: 0 0 10px 15px rgba(34, 211, 238, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.5);
+  }
+  70% {
+    transform: scale(1.04);
+    box-shadow: 0 0 10px 15px rgba(34, 211, 238, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
+  }
 }

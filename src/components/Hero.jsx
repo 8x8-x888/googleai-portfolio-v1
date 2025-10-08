@@ -8,10 +8,7 @@ const Hero = () => {
   const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
 
   return (
-    <section 
-      id="hero-container" 
-      className="relative bg-dark-bg overflow-hidden"
-    >
+    <section id="hero-container" className="relative bg-dark-bg overflow-hidden">
       {/* Background Image & Overlay Layer */}
       <div className="absolute inset-0 z-0">
         <img
@@ -20,15 +17,17 @@ const Hero = () => {
           className="w-full h-full object-cover object-center md:object-top opacity-90"
           loading="eager"
         />
-        <div 
+        <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, rgba(17, 24, 39, 1) 25%, rgba(17, 24, 39, 0.7) 55%, transparent 85%)' }}
+          style={{
+            background:
+              'linear-gradient(to right, rgba(17, 24, 39, 1) 25%, rgba(17, 24, 39, 0.7) 55%, transparent 85%)',
+          }}
         ></div>
       </div>
-      
+
       {/* Content Wrapper for all three sections */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* --- PART 1: HERO INTRO CONTENT --- */}
         <div id="hero" className="min-h-[90vh] flex items-center pt-24 pb-20">
           <div className="max-w-xl">
@@ -37,11 +36,12 @@ const Hero = () => {
                 Automation &bull; CRM &bull; Integrations
               </span>
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
-                BUILD &bull; AUTOMATE <br className="hidden md:block" /> &bull; <span className="gradient-text">SCALE</span>
+                BUILD &bull; AUTOMATE <br className="hidden md:block" /> &bull;{' '}
+                <span className="gradient-text">SCALE</span>
               </h1>
               <p className="text-lg text-gray-300">
-                Turn manual tasks into scalable systems. I help businesses grow smarter with automation,
-                CRM integrations, and optimized workflows.
+                Turn manual tasks into scalable systems. I help businesses grow smarter with
+                automation, CRM integrations, and optimized workflows.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <CalendlyTrigger
@@ -60,9 +60,9 @@ const Hero = () => {
               </div>
               <div className="flex flex-wrap gap-3 pt-6">
                 {HERO_TAGS.map((tag) => (
-                  <a 
-                    key={tag.name} 
-                    href={tag.href} 
+                  <a
+                    key={tag.name}
+                    href={tag.href}
                     className="bg-gray-800/70 text-gray-300 font-medium px-4 py-1.5 rounded-full text-sm hover:bg-gray-700 hover:text-white transition-colors duration-200"
                   >
                     {tag.name}
@@ -81,14 +81,16 @@ const Hero = () => {
             </div>
             <div className="mt-8 space-y-8">
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-                I build the digital engines that drive efficiency. My expertise lies in
-                transforming complex manual processes into seamless, automated
-                systems using <strong className="font-semibold text-primary-blue">Zapier</strong>, <strong className="font-semibold text-accent-cyan">Make</strong>, and <strong className="font-semibold text-primary-blue">n8n</strong>. I architect solutions that save
-                time, eliminate errors, and unlock scalable growth.
+                I build the digital engines that drive efficiency. My expertise lies in transforming
+                complex manual processes into seamless, automated systems using{' '}
+                <strong className="font-semibold text-primary-blue">Zapier</strong>,{' '}
+                <strong className="font-semibold text-accent-cyan">Make</strong>, and{' '}
+                <strong className="font-semibold text-primary-blue">n8n</strong>. I architect
+                solutions that save time, eliminate errors, and unlock scalable growth.
               </p>
               <blockquote className="max-w-3xl text-left text-lg italic text-gray-400 border-l-4 border-accent-cyan pl-6">
-                "The goal of automation is not to eliminate work, but to elevate human effort to
-                more valuable, creative, and strategic tasks."
+                {`"The goal of automation is not to eliminate work, but to elevate human effort to
+                more valuable, creative, and strategic tasks." `}
               </blockquote>
             </div>
           </div>
@@ -105,7 +107,6 @@ const Hero = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -11,14 +11,14 @@ const CalendlyTrigger = ({ url, className = '', children }) => {
     if (isUrlMissing && process.env.NODE_ENV === 'development') {
       console.warn(
         'CalendlyTrigger component is missing the `url` prop. ' +
-        'Please ensure the VITE_CALENDLY_URL environment variable is set.'
+          'Please ensure the VITE_CALENDLY_URL environment variable is set.'
       );
     }
   }, [isUrlMissing]);
 
   const handleClick = (e) => {
     e.preventDefault();
-    
+
     // Do not proceed if the URL is missing
     if (isUrlMissing) {
       return;
